@@ -1,0 +1,270 @@
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1400px;
+}
+
+.product-card {
+  padding: $base * 23.5 $base * 15 $base * 21;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__column {
+    &:last-child {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      margin-left: $base * 5;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__slider {
+    margin-bottom: $base * 8;
+  }
+
+  &__characteristics {}
+
+  &__title {
+    margin-bottom: $base * 8.5;
+    font-size: $base * 5.5;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    margin-left: $base * 2.5;
+    text-align: center;
+  }
+
+  &__btn {
+    background: #000;
+
+    &:last-child {
+      background: $color-bright-turquoise;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $base * 5;
+    }
+  }
+
+  &__btn-add {
+    background: $color-bright-turquoise;
+  }
+
+  &__btn-build {
+    color: $color-bright-turquoise;
+    background: #000;
+  }
+}
+
+.btn {
+  display: block;
+  padding: $base * 6 $base * 2;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translate(-10px, -10px);
+  transition: transform 0.4s ease 0s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(0);
+  }
+}
+
+.slider {
+  display: flex;
+
+  &__item {
+    border: 2px solid $color-white;
+    width: 203px;
+    height: 166px;
+    transition: border 0.4s ease 0s;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: $base * 5;
+    }
+
+    &:hover,
+    &_active {
+      border: 2px solid $color-bright-turquoise;
+    }
+
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__container {
+    overflow: hidden;
+    margin-left: $base * 4;
+    border: 2px solid $color-white;
+    width: 539px;
+    height: 539px;
+  }
+
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    transition: all 0.8s ease 0s;
+  }
+
+  &__slide {
+    height: 100%;
+    cursor: pointer;
+
+    img {
+      height: 100%;
+      max-width: 100%;
+      transition: transform 0.4s ease 0s;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+
+.characteristics {
+
+  &__inner {
+    display: flex;
+  }
+
+  &__item {
+    padding: $base * 3 $base * 1.5;
+    max-width: 147px;
+    text-align: center;
+    background: $color-bright-turquoise;
+
+    &:not(:last-child) {
+      margin-right: $base * 10.5;
+    }
+  }
+
+  &__title {
+    margin-bottom: $base * 2;
+    font-size: $base * 4.5;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    font-family: $fh;
+    font-size: $base * 4;
+    line-height: 140%;
+  }
+}
+
+.options {
+  flex-grow: 1;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: $base * 20;
+    }
+  }
+
+  &__discr {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $base * 4.5;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -$base * 2;
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
+  }
+
+  &__price {
+    font-size: $base * 6;
+
+    span {
+      margin-left: $base * 2;
+      color: $color-red;
+    }
+
+    &_discount {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 50%;
+        height: 2px;
+        background: $color-red;
+      }
+    }
+  }
+
+  &__row-glasses {
+    display: flex;
+  }
+
+  &__column {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .options__prompt {
+      display: block;
+      min-width: $base * 30;
+    }
+
+    &:not(:last-child) {
+      margin-right: $base * 2;
+    }
+
+    img {
+      margin-bottom: $base * 2;
+      width: 53px;
+      height: 44px;
+    }
+  }
+
+  &_sale {
+    position: relative;
+
+    &::before {
+      content: "Sale";
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0 $base * 2;
+      font-size: $base * 2.5;
+      line-height: $base * 4.5;
+      text-transform: uppercase;
+      color: #fff;
+      background: $color-red;
+    }
+  }
+
+  &__tab {
+    &_active {
+      border: 2px solid $color-red;
+    }
+  }
+
+  &__prompt {
+    position: absolute;
+    left: 0;
+    bottom: -$base * 5;
+    display: none;
+  }
+}

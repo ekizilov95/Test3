@@ -1,3 +1,9 @@
+html {
+  @media (max-width: $brealpoint-lg) {
+    font-size: 12px;
+  }
+}
+
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -7,8 +13,22 @@
 .product-card {
   padding: $base * 23.5 $base * 15 $base * 21;
 
+  @media (max-width: $brealpoint-xl) {
+    padding: $base * 10 0 0;
+  }
+
   &__inner {
     display: flex;
+
+    @media (max-width: $brealpoint-xl) {
+      flex-direction: column;
+    }
+  }
+
+  &__row {
+    @media (max-width: $brealpoint-xl) {
+      margin-bottom: $base * 3;
+    }
   }
 
   &__column {
@@ -17,6 +37,20 @@
       flex-grow: 1;
       flex-direction: column;
       margin-left: $base * 5;
+    }
+
+    @media (max-width: $brealpoint-xl) {
+      &:first-child {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+
+    @media (max-width: $brealpoint-lg) {
+      &:first-child {
+        flex-direction: column;
+        margin-bottom: $base * 3;
+      }
     }
   }
 
@@ -27,9 +61,11 @@
 
   &__slider {
     margin-bottom: $base * 8;
-  }
 
-  &__characteristics {}
+    @media (max-width: $brealpoint-lg) {
+      justify-content: center;
+    }
+  }
 
   &__title {
     margin-bottom: $base * 8.5;
@@ -81,6 +117,7 @@
 }
 
 .slider {
+  position: relative;
   display: flex;
 
   &__item {
@@ -89,10 +126,6 @@
     height: 166px;
     transition: border 0.4s ease 0s;
     cursor: pointer;
-
-    &:not(:last-child) {
-      margin-bottom: $base * 5;
-    }
 
     &:hover,
     &_active {
@@ -105,12 +138,31 @@
     }
   }
 
+  &__preview-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: $brealpoint-md) {
+      display: none;
+    }
+  }
+
   &__container {
     overflow: hidden;
     margin-left: $base * 4;
     border: 2px solid $color-white;
     width: 539px;
     height: 539px;
+
+    @media (max-width: $brealpoint-md) {
+      margin: 0;
+      width: 100%;
+    }
+
+    @media (max-width: $brealpoint-sm) {
+      height: 350px;
+    }
   }
 
   &__wrapper {
@@ -133,12 +185,53 @@
       }
     }
   }
+
+  &__paginations {
+    position: absolute;
+    left: 50%;
+    bottom: $base * 4;
+    display: none;
+    transform: translateX(-50%);
+
+    @media (max-width: $brealpoint-md) {
+      display: flex;
+    }
+  }
+
+  &__dot {
+    list-style: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    opacity: 0.2;
+    transition: opacity 0.8s ease 0s;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: $base * 4;
+    }
+
+    &_active {
+      opacity: 1;
+    }
+  }
 }
 
 .characteristics {
 
   &__inner {
     display: flex;
+
+    @media (max-width: $brealpoint-xl) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $brealpoint-lg) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: 0;
+    }
   }
 
   &__item {
@@ -147,8 +240,19 @@
     text-align: center;
     background: $color-bright-turquoise;
 
-    &:not(:last-child) {
-      margin-right: $base * 10.5;
+    @media (min-width: $brealpoint-xl) {
+      &:not(:last-child) {
+        margin-right: $base * 10.5;
+      }
+    }
+
+    @media (max-width: $brealpoint-xl) {
+      margin: 0 0 $base * 4 $base * 4 0;
+    }
+
+    @media (max-width: $brealpoint-sm) {
+      margin-left: 0;
+      min-width: 100%;
     }
   }
 
@@ -171,6 +275,10 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: $base * 20;
+
+      @media (max-width: $brealpoint-xl) {
+        margin-bottom: $base * 10;
+      }
     }
   }
 
@@ -197,10 +305,19 @@
     span {
       margin-left: $base * 2;
       color: $color-red;
+
+      @media (max-width: 1248px) {
+        margin: 0;
+      }
     }
 
     &_discount {
       position: relative;
+
+      @media (max-width: 1248px) {
+        display: flex;
+        flex-direction: column;
+      }
 
       &::before {
         content: '';
@@ -210,6 +327,11 @@
         width: 50%;
         height: 2px;
         background: $color-red;
+
+        @media (max-width: 1248px) {
+          top: 27%;
+          width: 100%;
+        }
       }
     }
   }

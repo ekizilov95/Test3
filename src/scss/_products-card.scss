@@ -1,5 +1,5 @@
 html {
-  @media (max-width: $brealpoint-lg) {
+  @media (max-width: $breakpoint-lg) {
     font-size: 12px;
   }
 }
@@ -13,20 +13,20 @@ html {
 .product-card {
   padding: $base * 23.5 $base * 15 $base * 21;
 
-  @media (max-width: $brealpoint-xl) {
+  @media (max-width: $breakpoint-xl) {
     padding: $base * 10 0 0;
   }
 
   &__inner {
     display: flex;
 
-    @media (max-width: $brealpoint-xl) {
+    @media (max-width: $breakpoint-xl) {
       flex-direction: column;
     }
   }
 
   &__row {
-    @media (max-width: $brealpoint-xl) {
+    @media (max-width: $breakpoint-xl) {
       margin-bottom: $base * 3;
     }
   }
@@ -39,14 +39,14 @@ html {
       margin-left: $base * 5;
     }
 
-    @media (max-width: $brealpoint-xl) {
+    @media (max-width: $breakpoint-xl) {
       &:first-child {
         display: flex;
         justify-content: space-around;
       }
     }
 
-    @media (max-width: $brealpoint-lg) {
+    @media (max-width: $breakpoint-lg) {
       &:first-child {
         flex-direction: column;
         margin-bottom: $base * 3;
@@ -62,7 +62,7 @@ html {
   &__slider {
     margin-bottom: $base * 8;
 
-    @media (max-width: $brealpoint-lg) {
+    @media (max-width: $breakpoint-lg) {
       justify-content: center;
     }
   }
@@ -143,7 +143,7 @@ html {
     flex-direction: column;
     justify-content: space-between;
 
-    @media (max-width: $brealpoint-md) {
+    @media (max-width: $breakpoint-md) {
       display: none;
     }
   }
@@ -155,12 +155,12 @@ html {
     width: 539px;
     height: 539px;
 
-    @media (max-width: $brealpoint-md) {
+    @media (max-width: $breakpoint-md) {
       margin: 0;
       width: 100%;
     }
 
-    @media (max-width: $brealpoint-sm) {
+    @media (max-width: $breakpoint-sm) {
       height: 350px;
     }
   }
@@ -193,7 +193,7 @@ html {
     display: none;
     transform: translateX(-50%);
 
-    @media (max-width: $brealpoint-md) {
+    @media (max-width: $breakpoint-md) {
       display: flex;
     }
   }
@@ -223,11 +223,11 @@ html {
   &__inner {
     display: flex;
 
-    @media (max-width: $brealpoint-xl) {
+    @media (max-width: $breakpoint-xl) {
       flex-direction: column;
     }
 
-    @media (max-width: $brealpoint-lg) {
+    @media (max-width: $breakpoint-lg) {
       flex-flow: row wrap;
       justify-content: space-between;
       margin: 0;
@@ -240,17 +240,17 @@ html {
     text-align: center;
     background: $color-bright-turquoise;
 
-    @media (min-width: $brealpoint-xl) {
+    @media (min-width: $breakpoint-xl) {
       &:not(:last-child) {
         margin-right: $base * 10.5;
       }
     }
 
-    @media (max-width: $brealpoint-xl) {
+    @media (max-width: $breakpoint-xl) {
       margin: 0 0 $base * 4 $base * 4 0;
     }
 
-    @media (max-width: $brealpoint-sm) {
+    @media (max-width: $breakpoint-sm) {
       margin-left: 0;
       min-width: 100%;
     }
@@ -276,7 +276,7 @@ html {
     &:not(:last-child) {
       margin-bottom: $base * 20;
 
-      @media (max-width: $brealpoint-xl) {
+      @media (max-width: $breakpoint-xl) {
         margin-bottom: $base * 10;
       }
     }

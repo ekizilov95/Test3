@@ -16,13 +16,12 @@ $fh: "Helvetica";
 }
 
 // VARIABLE //
-$fw: 500;
-$fz: 14px;
-$base: 4px;
-
+$fw: rem(500px);
+$fz: rem(14px);
+$base: rem(4px);
 
 // BREAKPOINTS //
-$brealpoint-sm: 576px;
-$brealpoint-md: 768px;
-$brealpoint-lg: 992px;
-$brealpoint-xl: 1200px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
